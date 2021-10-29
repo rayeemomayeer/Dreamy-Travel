@@ -14,7 +14,7 @@ const Navbar = () => {
                     <div id="mobileMenu" className="flex md:hidden">
                         <button type="button" className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
                             <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
-                                <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+                                <path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
                             </svg>
                         </button>
                     </div>
@@ -37,8 +37,8 @@ const Navbar = () => {
                         <button className="text-white bg-indigo-700 hover:bg-indigo-800 p-2 px-3 mx-2 rounded-xl">Log in</button>
                         <button type="button" className="flex items-center focus:outline-none" aria-label="toggle profile dropdown">
                            
-                            <div class="w-10 h-10 overflow-hidden border-2 border-gray-400 rounded-full">
-                                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" class="object-cover w-full h-full" alt="avatar" />
+                            <div className="w-10 h-10 overflow-hidden border-2 border-gray-400 rounded-full">
+                                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" className="object-cover w-full h-full" alt="avatar" />
                             </div>
                            
                         </button>
