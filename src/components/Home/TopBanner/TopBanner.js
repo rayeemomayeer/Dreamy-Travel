@@ -20,14 +20,14 @@ const TopBanner = () => {
     <div class="carousel-item">
       <img className="object-cover w-full" src="https://images.unsplash.com/photo-1623678254109-e7eb91f97bf4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1376&q=80" class="d-block w-100" alt="..." />
       <div class="carousel-caption d-none d-md-block">
-        <h5 className="text-8xl font-serif  text-blue-700">Second slide label</h5>
+        <h5 className="text-8xl font-serif  text-yellow-500">Second slide label</h5>
         <p className="text-xl">Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img className="object-cover w-full" src="https://images.unsplash.com/photo-1600520611035-84157ad4084d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80" class="d-block w-100" alt="..." />
       <div class="carousel-caption d-none d-md-block">
-        <h5 className="text-8xl font-serif  text-green-900">Third slide label</h5>
+        <h5 className="text-8xl font-serif  text-yellow-900">Third slide label</h5>
         <p className="text-xl">Some representative placeholder content for the third slide.</p>
       </div>
     </div>

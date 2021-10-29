@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
+import Map from './Map/Map';
 import TopBanner from './TopBanner/TopBanner';
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <Navbar></Navbar>
       <TopBanner></TopBanner>
+      <Map></Map>
     </div>
   );
 };
