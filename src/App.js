@@ -1,10 +1,18 @@
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import './App.css';
+import Home from "./components/Home/Home";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello it has ben push</h1>
+      <Router>
+        <Home></Home>
+      </Router>
     </div>
   );
 }
