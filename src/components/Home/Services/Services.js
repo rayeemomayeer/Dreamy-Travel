@@ -9,7 +9,7 @@ import internet from './wifi.png';
 const Services = () => {
 
   return (
-    <div di="services">
+    <div id="services">
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-16 mx-auto">
           <div className="flex flex-wrap w-full mb-16 flex-col items-center text-center">

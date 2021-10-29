@@ -9,6 +9,7 @@ import AccountDetails from "./components/AccountDetails/AccountDetails";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
+import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 import Navbar from "./components/Navbar/Navbar";
 import NotFound from "./components/NotFound/NotFound"
 import TourOrderDetails from "./components/TourOrderDetails/TourOrderDetails";
@@ -27,12 +28,12 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/tour/:tourId">
+            <PrivateRoute path="/tour/:tourId">
               <TourOrderDetails></TourOrderDetails>
-            </Route>
-            <Route path="/user/:userName">
+            </PrivateRoute>
+            <PrivateRoute path="/user/:userName">
               <AccountDetails></AccountDetails>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>
