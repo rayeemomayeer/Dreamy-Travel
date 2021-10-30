@@ -6,7 +6,7 @@ const AccountDetails = () => {
   const {user,logOut} = useAuth(); 
   return (
     <main className="profile-page">
-  <section className="relative block h-500-px">
+  <section className="relative block h-500-px w-12/12 overflow-hidden">
     <div className="absolute top-0 w-full h-full bg-center bg-cover account-details">
       <span id="blackOverlay" className="w-full h-full absolute opacity-50 bg-black"></span>
     </div>
@@ -58,11 +58,7 @@ const AccountDetails = () => {
             <div className="flex flex-wrap justify-center">
               <div className="w-full lg:w-9/12 px-4">
                 <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
-                  An artist of considerable range, Jenna the name taken by
-                  Melbourne-raised, Brooklyn-based Nick Murphy writes,
-                  performs and records all of his own music, giving it a
-                  warm, intimate feel with a solid groove structure. An
-                  artist of considerable range.
+                  A user is someone who employs or uses a particular thing, like a user of nicotine or a user of an internet site. ... To use something is to employ it or operate it, so a user is someone who uses or takes advantage of something. If you have a computer and use it for anything, you're a computer user.
                 </p>
                 
               </div>
