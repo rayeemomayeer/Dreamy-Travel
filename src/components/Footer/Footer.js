@@ -1,61 +1,101 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import flight from './flight.png'
 
 const Footer = () => {
   return (
     <div>
-      
-<footer className="bg-white dark:bg-gray-800 w-full py-8 pt-16">
-    <div className="max-w-screen-xl mx-auto px-4">
-        <ul className="max-w-screen-md mx-auto text-lg font-light flex flex-wrap justify-between">
-            <li className="my-2">
-                <a className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
-                    FAQ
-                </a>
-            </li>
-            <li className="my-2">
-                <a className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
-                    Configuration
-                </a>
-            </li>
-            <li className="my-2">
-                <a className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
-                    Github
-                </a>
-            </li>
-            <li className="my-2">
-                <a className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
-                    LinkedIn
-                </a>
-            </li>
-        </ul>
-        <div className="pt-8 flex max-w-xs mx-auto items-center justify-around">
-            <a href="#" className="text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
-                <svg width="20" height="20" fill="currentColor" className="text-xl hover:text-gray-800 dark:hover:text-white transition-colors duration-200" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z">
-                    </path>
-                </svg>
-            </a>
-            <a href="#" className="text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
-                <svg width="20" height="20" fill="currentColor" className="text-xl hover:text-gray-800 dark:hover:text-white transition-colors duration-200" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z">
-                    </path>
-                </svg>
-            </a>
-            
-            <a href="#" className="text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
-                <svg width="20" height="20" fill="currentColor" className="text-xl hover:text-gray-800 dark:hover:text-white transition-colors duration-200" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z">
-                    </path>
-                </svg>
-            </a>
-            
+      <footer class="text-gray-400 bg-gray-900 body-font mt-24">
+  <div class="container px-5 py-24 mx-auto flex md:items-left lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-start md:text-left md:mt-0 mt-10">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+        <img className="w-12" src={flight} alt="" />
+        <span class="ml-3 text-xl">Dreamy Travels</span>
+      </a>
+      <p class="mt-2 text-sm text-gray-500">Air plant banjo lyft occupy retro adaptogen indego</p>
+    </div>
+    <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-start order-first">
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Travel</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <HashLink to="/home#tours" class="text-gray-400 hover:text-white">Tours</HashLink>
+          </li>
+          <li>
+            <HashLink to="/home#destination" class="text-gray-400 hover:text-white">Destination</HashLink>
+          </li>
+          
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Orders</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <HashLink to="/placeorder" class="text-gray-400 hover:text-white">My Orders</HashLink>
+          </li>
+          
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">More</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <HashLink to="/adminpanel" class="text-gray-400 hover:text-white">Admin Panel</HashLink>
+          </li>
+          <li>
+            <HashLink to="/login" class="text-gray-400 hover:text-white">Login</HashLink>
+          </li>
+          <li>
+            <HashLink to="/user/:userName" class="text-gray-400 hover:text-white">Account Details</HashLink>
+          </li>
+          
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">SUBSCRIBE</h2>
+        <div class="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
+          
+          <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded">Signin now</button>
         </div>
         
-            <div className="text-center text-gray-500 dark:text-gray-200 pt-10 sm:pt-12 font-light flex items-center justify-center">
-                Copyright &copy; 2020 - 2021 Dreamy Travels.
-            </div>
-        </div>
-    </footer>
+      </div>
+    
+      
+    </div>
+  </div>
+  <div class="bg-gray-800 bg-opacity-75">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="text-gray-400 text-sm text-center sm:text-left">© 2021 all rights —
+        <HashLink href="https://twitter.com/knyttneve" class="text-gray-500 ml-1" rel="noopener noreferrer" target="_blank">Dreamy Travels</HashLink>
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <a href="https://www.facebook.com/" target="_blank" class="text-gray-400">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a href="https://twitter.com/home" target="_blank" class="ml-3 text-gray-400">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" class="ml-3 text-gray-400">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/home/?originalSubdomain=bd" target="_blank" class="ml-3 text-gray-400">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
     </div>
   );
 };
