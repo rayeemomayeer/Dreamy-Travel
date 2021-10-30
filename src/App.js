@@ -17,7 +17,7 @@ import AuthProvider from "./contexts/AuthProvider";
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <AuthProvider>
         <Router>
           <Navbar></Navbar>
