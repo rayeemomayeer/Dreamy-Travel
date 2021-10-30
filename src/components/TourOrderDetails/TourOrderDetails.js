@@ -8,7 +8,7 @@ const TourOrderDetails = () => {
   const [details, setDetails]=useState({})
   const {user} = useAuth(); 
   useEffect(() => {
-    fetch('/tours.json')
+    fetch('http://localhost:5000/tours')
       .then(res=>res.json())
       .then(data=>{
     const p=data.find(p=>p.id==tourId)
