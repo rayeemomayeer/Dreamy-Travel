@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
+import MyOrders from "./components/MyOrders/MyOrders";
 import Navbar from "./components/Navbar/Navbar";
 import NotFound from "./components/NotFound/NotFound"
 import TourOrderDetails from "./components/TourOrderDetails/TourOrderDetails";
@@ -28,6 +29,9 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+            <PrivateRoute path="/orders">
+              <MyOrders></MyOrders>
+            </PrivateRoute>
             <PrivateRoute path="/tour/:tourId">
               <TourOrderDetails></TourOrderDetails>
             </PrivateRoute>

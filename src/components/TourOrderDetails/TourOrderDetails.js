@@ -1,15 +1,17 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import useAuth from '../../hooks/useAuth';
 import Facilities from '../facilities/Facilities';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
   
 const TourOrderDetails = () => {
   const {tourId} = useParams();
   const [details, setDetails]=useState({})
   const {user} = useAuth(); 
+  const [disable, setDisable] = React.useState(false);
+  const [buttonText, setButtonText] = useState("Book now");
   useEffect(() => {
     fetch('http://localhost:5000/tours')
       .then(res=>res.json())
@@ -24,6 +26,8 @@ const TourOrderDetails = () => {
     .then(res=>{
       if(res.data.insertedId){
         toast("Added in to the My Order");
+        setDisable(true)
+        setButtonText('booked');
       }
     })
   }
@@ -105,8 +109,8 @@ const TourOrderDetails = () => {
   <hr className="my-12 text-gray-400" />
   <div className="flex">
     <span className="title-font font-medium text-3xl text-gray-900">$ {details.price}</span>
-    <button onClick={onSubmit} className="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">Book Hotel</button>
-    <ToastContainer /><ToastContainer />
+    <button disabled={disable} id="book-hotel-btn" onClick={onSubmit} className="flex ml-auto text-white bg-gray-600 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 rounded uppercase">{buttonText}</button>
+    <ToastContainer />
   </div>
 </div>
       </div>

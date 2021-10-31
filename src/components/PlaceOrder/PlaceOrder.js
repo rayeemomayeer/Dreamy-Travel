@@ -2,8 +2,8 @@ import React from 'react';
 
 const PlaceOrder = () => {
   return (
-    <div>
-      <section className="h-screen bg-gray-100 bg-opacity-50">
+    <div className="ml-12 md:ml-0">
+      <section className=" h-screen bg-gray-100 bg-opacity-50">
   <form className="max-w-2xl mx-auto shadow-md">
     <div className="p-4 bg-gray-100 border-t-2 border-green-400 rounded-lg bg-opacity-5">
       <div className="max-w-sm mx-auto md:w-full md:mx-0">
