@@ -44,7 +44,7 @@ const Navbar = () => {
                         <button type="button" className="flex items-center focus:outline-none" aria-label="toggle profile dropdown">
                             {user?.photoURL?
                             <Link to={`/user/${user.displayName}`}><div className="my-auto w-10 h-10 overflow-hidden border-2 border-gray-400 rounded-full">
-                                <img src={user.photoURL} />
+                                <img src={user?.photoURL?user.photoURL:'https://grandimageinc.com/wp-content/uploads/2015/09/icon-user-default.png'} />
                             </div></Link>:<span></span>
                             }
                         </button>

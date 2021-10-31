@@ -17,7 +17,7 @@ const PlaceOrder = () => {
       <div className="max-w-sm mx-auto md:w-full md:mx-0">
         <div className="inline-flex items-center space-x-4">
           <Link to="/user/:userName" className="block relative rounded-xl">
-            <img className="rounded-pill w-16" alt="profil" src={user?.photoURL} />
+            <img className="rounded-pill w-16" alt="profil" src={user?.photoURL?user.photoURL:'https://grandimageinc.com/wp-content/uploads/2015/09/icon-user-default.png'} />
           </Link>
           <h1 className="text-gray-600">
             {user?.displayName}
