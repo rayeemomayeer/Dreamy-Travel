@@ -52,7 +52,7 @@ const Facilities = () => {
           <img src={conditioning} alt="" />
         </div>
         <div className="flex-grow pl-6">
-          <h2 className="text-gray-600 text-lg title-font font-medium mb-2">Air conditioning</h2>
+          <h2 className="text-gray-600 text-lg title-font font-medium mb-2">Cool</h2>
           
         </div>
       </div>

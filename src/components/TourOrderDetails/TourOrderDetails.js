@@ -1,9 +1,11 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import Facilities from '../facilities/Facilities';
-import PlaceOrder from '../PlaceOrder/PlaceOrder';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+  
 const TourOrderDetails = () => {
   const {tourId} = useParams();
   const [details, setDetails]=useState({})
@@ -13,11 +15,19 @@ const TourOrderDetails = () => {
       .then(res=>res.json())
       .then(data=>{
     const p=data.find(p=>p.id==tourId)
-      console.log('this is details',p)
-
       setDetails(p)
     })
     },[tourId])
+
+  const onSubmit = () => {
+    axios.post('http://localhost:5000/orders',details)
+    .then(res=>{
+      if(res.data.insertedId){
+        toast("Added in to the My Order");
+      }
+    })
+  }
+
   return (
     <div>
       
@@ -26,18 +36,18 @@ const TourOrderDetails = () => {
     {/* Image gallery */}
     <div className="mt-6 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8">
       <div className="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
-        <img src={details.detailImage} alt="Two each of gray, white, and black shirts laying flat." className="w-full h-full object-center object-cover" />
+        <img src={details?.detailImage} alt="Two each of gray, white, and black shirts laying flat." className="w-full h-full object-center object-cover" />
       </div>
       <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
         <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-          <img src={details.detailImage2} alt="Model wearing plain black basic tee." className="w-full h-full object-center object-cover" />
+          <img src={details?.detailImage2} alt="Model wearing plain black basic tee." className="w-full h-full object-center object-cover" />
         </div>
         <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-          <img src={details.detailImage3} alt="Model wearing plain gray basic tee." className="w-full h-full object-center object-cover" />
+          <img src={details?.detailImage3} alt="Model wearing plain gray basic tee." className="w-full h-full object-center object-cover" />
         </div>
       </div>
       <div className="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-        <img src={details.detailImage4} alt="Model wearing plain white basic tee." className="w-full h-full object-center object-cover" />
+        <img src={details?.detailImage4} alt="Model wearing plain white basic tee." className="w-full h-full object-center object-cover" />
       </div>
     </div>
     {/* Product info */}
@@ -95,7 +105,8 @@ const TourOrderDetails = () => {
   <hr className="my-12 text-gray-400" />
   <div className="flex">
     <span className="title-font font-medium text-3xl text-gray-900">$ {details.price}</span>
-    <button class="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">Book Hotel</button>
+    <button onClick={onSubmit} className="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">Book Hotel</button>
+    <ToastContainer /><ToastContainer />
   </div>
 </div>
       </div>
