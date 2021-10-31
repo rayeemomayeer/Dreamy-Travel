@@ -1,7 +1,19 @@
 import React from 'react';
 
 const OrdersItem = (props) => {
-  const {name, image, price,description} = props.itm;
+  const {_id,name, image, price,description} = props.itm;
+
+  const handleDelete = (id) => {
+    const url = `http://localhost:5000/orders/${id}`;
+      fetch(url, {
+        method: 'DELETE'
+      })
+      .then(res=>res.json())
+      .then(data=> {
+        console.log(data)
+      })
+  }
+
   return (
     <li className="py-6 flex">
                     
@@ -42,7 +54,7 @@ const OrdersItem = (props) => {
             <h1 class="text-gray-700 font-bold text-xl">
                 $ {price}
             </h1>
-            <button class="px-3 py-2 bg-red-800 text-white text-xs font-bold uppercase rounded">
+            <button onClick={()=> handleDelete(_id)} class="px-3 py-2 bg-red-800 text-white text-xs font-bold uppercase rounded">
                 remove
             </button>
         </div>

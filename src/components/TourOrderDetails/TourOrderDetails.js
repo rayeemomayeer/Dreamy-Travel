@@ -22,6 +22,7 @@ const TourOrderDetails = () => {
     },[tourId])
 
   const onSubmit = () => {
+    delete details._id
     axios.post('http://localhost:5000/orders',details)
     .then(res=>{
       if(res.data.insertedId){
