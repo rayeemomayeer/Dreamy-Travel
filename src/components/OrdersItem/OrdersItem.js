@@ -4,6 +4,7 @@ const OrdersItem = (props) => {
   const {_id,name, image, price,description} = props.itm;
 
   const handleDelete = (id) => {
+
     const url = `http://localhost:5000/orders/${id}`;
       fetch(url, {
         method: 'DELETE'

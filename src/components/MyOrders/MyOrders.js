@@ -39,7 +39,7 @@ const MyOrders = () => {
         <div className="border-t border-gray-200 py-6 px-4 sm:px-6 w-2/3 mx-auto">
             
             <div className="mt-6">
-              <Link to="/booked" className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700">Checkout</Link>
+              <Link to="/booked" className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700">Book Now</Link>
             </div>
             <div className="mt-6 flex justify-center text-sm text-center text-gray-500">
               <p>
