@@ -13,7 +13,7 @@ const TourOrderDetails = () => {
   const [disable, setDisable] = React.useState(false);
   const [buttonText, setButtonText] = useState("Book now");
   useEffect(() => {
-    fetch('http://localhost:5000/tours')
+    fetch('https://dreadful-spider-50392.herokuapp.com/tours')
       .then(res=>res.json())
       .then(data=>{
     const p=data.find(p=>p.id==tourId)
@@ -23,7 +23,7 @@ const TourOrderDetails = () => {
 
   const onSubmit = () => {
     delete details._id
-    axios.post('http://localhost:5000/orders',details)
+    axios.post('https://dreadful-spider-50392.herokuapp.com/orders',details)
     .then(res=>{
       if(res.data.insertedId){
         toast("Added in to the My Order");

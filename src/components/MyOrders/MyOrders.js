@@ -6,7 +6,7 @@ import PlaceOrder from '../PlaceOrder/PlaceOrder'
 const MyOrders = () => {
   const [item, setItem] = useState([]);
   useEffect(()=>{
-    fetch('http://localhost:5000/orders')
+    fetch('https://dreadful-spider-50392.herokuapp.com/orders')
       .then(response => response.json())
       .then(data => setItem(data))
   }, []);

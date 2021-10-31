@@ -5,7 +5,7 @@ const OrdersItem = (props) => {
 
   const handleDelete = (id) => {
 
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://dreadful-spider-50392.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: 'DELETE'
       })
