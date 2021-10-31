@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
+import Facilities from '../facilities/Facilities';
 import PlaceOrder from '../PlaceOrder/PlaceOrder';
 
 const TourOrderDetails = () => {
@@ -46,7 +47,7 @@ const TourOrderDetails = () => {
       </div>
       {/* Options */}
       <div className="mt-4 lg:mt-0 lg:row-span-3">
-        <PlaceOrder></PlaceOrder>
+        <Facilities></Facilities>
       </div>
       <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
         {/* Description and details */}
@@ -94,6 +95,7 @@ const TourOrderDetails = () => {
   <hr className="my-12 text-gray-400" />
   <div className="flex">
     <span className="title-font font-medium text-3xl text-gray-900">$ {details.price}</span>
+    <button class="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">Book Hotel</button>
   </div>
 </div>
       </div>
