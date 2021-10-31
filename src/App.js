@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import AccountDetails from "./components/AccountDetails/AccountDetails";
+import Booked from "./components/Booked/Booked";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
@@ -37,6 +38,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/user/:userName">
               <AccountDetails></AccountDetails>
+            </PrivateRoute>
+            <PrivateRoute path="/booked">
+              <Booked></Booked>
             </PrivateRoute>
             <Route path="/login">
               <Login></Login>

@@ -10,7 +10,7 @@ const OrdersItem = (props) => {
       })
       .then(res=>res.json())
       .then(data=> {
-        alert('deleted')
+        alert('deleted and Please reload the page')
         console.log(data)
       })
   }

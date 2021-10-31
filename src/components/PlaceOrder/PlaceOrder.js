@@ -1,18 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const PlaceOrder = () => {
+  const {user} = useAuth();
+  const onSubmit = e => {
+    e.preventDefault();
+    alert('fill up successfully')
+  }
+
   return (
     <div className="ml-12 md:ml-0">
       <section className=" h-screen bg-gray-100 bg-opacity-50">
-  <form className="max-w-2xl mx-auto shadow-md">
-    <div className="p-4 bg-gray-100 border-t-2 border-green-400 rounded-lg bg-opacity-5">
+  <form onSubmit={onSubmit} className="max-w-2xl mx-auto shadow-md">
+    <div className="p-4 bg-gray-100 border-t-2 border-indigo-400 rounded-lg bg-opacity-5">
       <div className="max-w-sm mx-auto md:w-full md:mx-0">
         <div className="inline-flex items-center space-x-4">
-          <a href="#" className="block relative">
-            <img alt="profil" src="https://media.istockphoto.com/photos/portrait-of-happy-casual-bearded-man-holding-trophy-and-celebrating-picture-id1327485360?k=20&m=1327485360&s=612x612&w=0&h=vkGZBciLl2cfelmB8vXZInFu82zUT6dh_7mnLFVFV3U=" className="mx-auto object-cover rounded-full h-16 w-16 " />
-          </a>
+          <Link to="/user/:userName" className="block relative rounded-xl">
+            <img className="rounded-pill w-16" alt="profil" src={user?.photoURL} />
+          </Link>
           <h1 className="text-gray-600">
-            Charlie brakham
+            {user?.displayName}
           </h1>
         </div>
       </div>
@@ -24,7 +32,7 @@ const PlaceOrder = () => {
         </h2>
         <div className="max-w-sm mx-auto md:w-2/3">
           <div className=" relative ">
-            <input type="text" id="user-info-email" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Email" />
+            <input readonly value={user?.email} type="text" id="user-info-email" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Email" />
           </div>
         </div>
       </div>
@@ -36,25 +44,25 @@ const PlaceOrder = () => {
         <div className="max-w-sm mx-auto space-y-5 md:w-2/3">
           <div>
             <div className=" relative ">
-              <input type="text" id="user-info-name" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Name" />
+              <input required type="text" id="user-info-name" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Name" />
             </div>
           </div>
           <div>
             <div className=" relative ">
-              <input type="text" id="user-info-phone" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Phone number" />
+              <input required type="text" id="user-info-phone" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Phone number" />
             </div>
           </div>
           <div>
             <div className=" relative ">
-              <input type="text" id="user-info-address" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Current Address" />
+              <input required type="text" id="user-info-address" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Current Address" />
             </div>
           </div>
         </div>
       </div>
       <hr />
       <div className="w-full px-4 pb-4 mx-auto text-gray-500 md:w-2/3">
-        <button type="submit" className="py-2 px-4  bg-green-600 hover:bg-green-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-          Book Now
+        <button type="submit" className="py-2 px-4  bg-indigo-700 hover:bg-indigo-800 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+          FILL UP THE FORM
         </button>
       </div>
     </div>
